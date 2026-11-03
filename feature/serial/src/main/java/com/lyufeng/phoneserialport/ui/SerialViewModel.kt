@@ -220,7 +220,7 @@ class SerialViewModel(application: Application) : AndroidViewModel(application) 
         launch {
             val s=settings.value
             val result=port.send(encodeCommand(macro.content,macro.hex,s.charset,s.ending,s.receiveEnding),s.copy(lineDelayMs=macro.delayMs,delayByCharacter=s.delayByCharacter && !macro.hex))
-            if(result.error != null) throw result.error
+            result.error?.let {throw it}
             storage.dao.addHistory(HistoryEntity(content=macro.content,hex=macro.hex,charset=s.charset))
         }
     }

@@ -6,7 +6,7 @@ plugins {
 tasks.withType<Test>().configureEach {
     systemProperty("java.io.tmpdir", "D:/Data/.temp/AndroidToolKit-tests")
     systemProperty("robolectric.dependency.repo.url", "https://maven.aliyun.com/repository/public")
-    systemProperty("maven.repo.local", "D:/Data/.temp/AndroidToolKit-robolectric")
+    systemProperty("maven.repo.local", "D:/Data/.temp/AndroidToolKit-robolectric/${System.getProperty("user.name")}")
     jvmArgs("--add-opens=java.base/java.lang=ALL-UNNAMED", "--add-opens=java.base/java.util=ALL-UNNAMED",
         "--add-opens=java.base/java.io=ALL-UNNAMED", "--add-opens=java.base/java.net=ALL-UNNAMED",
         "--add-opens=java.base/java.security=ALL-UNNAMED", "--add-opens=java.base/java.text=ALL-UNNAMED",
@@ -56,6 +56,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:home"))
+    implementation(project(":feature:update"))
     implementation(project(":feature:serial"))
     implementation(project(":feature:flash"))
     implementation(libs.androidx.core.ktx)
@@ -63,14 +65,16 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.material3)
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.robolectric:robolectric:4.17")
     testImplementation("androidx.compose.ui:ui-test-junit4")
     testImplementation("androidx.test.ext:junit:1.3.0")
     testImplementation("androidx.test.espresso:espresso-core:3.7.0")
     androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(project(":feature:flash:project-import"))
+    androidTestImplementation(project(":feature:flash:native-runtime"))
+    androidTestImplementation(project(":feature:flash:compiler"))
+    androidTestImplementation(project(":feature:flash:openocd"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")

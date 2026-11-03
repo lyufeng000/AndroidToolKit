@@ -10,7 +10,11 @@ android {
     compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
     buildFeatures { compose = true }
     testOptions { unitTests.isIncludeAndroidResources = true }
-    packaging { jniLibs.useLegacyPackaging = true }
+    sourceSets.named("main") {
+        // The native runtime packages these files from their existing locations.
+        assets.setSrcDirs(emptyList<String>())
+        jniLibs.setSrcDirs(emptyList<String>())
+    }
 }
 
 tasks.withType<Test>().configureEach {
@@ -19,6 +23,11 @@ tasks.withType<Test>().configureEach {
 }
 
 dependencies {
+    api(project(":feature:flash:model"))
+    implementation(project(":feature:flash:project-import"))
+    implementation(project(":feature:flash:native-runtime"))
+    implementation(project(":feature:flash:compiler"))
+    implementation(project(":feature:flash:openocd"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
@@ -26,7 +35,6 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
-    implementation("androidx.documentfile:documentfile:1.0.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.json:json:20240303")

@@ -7,5 +7,6 @@ plugins {
 
 layout.buildDirectory.set(file("D:/Data/.temp/AndroidToolKit-build/root"))
 subprojects {
-    layout.buildDirectory.set(file("D:/Data/.temp/AndroidToolKit-build/${project.path.trim(':').replace(':', '/')}"))
+    // Keep child module outputs outside the parent module's clean directory.
+    layout.buildDirectory.set(file("D:/Data/.temp/AndroidToolKit-build/${project.path.trim(':').replace(':', '-')}"))
 }

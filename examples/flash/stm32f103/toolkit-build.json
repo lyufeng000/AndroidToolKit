@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "name": "STM32F103C8 · PC13 blink",
+  "cpu": "cortex-m3",
+  "sources": ["startup.c", "main.c"],
+  "includeDirs": [],
+  "defines": [],
+  "linkerScript": "stm32f103c8.ld",
+  "flags": ["-std=c11", "-Os"],
+  "libraries": [],
+  "linkFlags": ["--gc-sections"]
+}

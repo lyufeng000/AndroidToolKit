@@ -1,0 +1,204 @@
+<resources>
+    <string name="ui_24d0f873" formatted="false">串口助手</string>
+    <string name="ui_11c1fa" formatted="false">退出</string>
+    <string name="ui_fd527" formatted="false">终端</string>
+    <string name="ui_114509" formatted="false">设备</string>
+    <string name="ui_116b70" formatted="false">设置</string>
+    <string name="ui_bba3b" formatted="false">帮助</string>
+    <string name="ui_8a5aee8b" formatted="false">端口仍在运行</string>
+    <string name="ui_3f6d3bee" formatted="false">关闭串口并退出，或保留后台连接。</string>
+    <string name="ui_c15fc1d6" formatted="false">关闭并退出</string>
+    <string name="ui_e51ea3c5" formatted="false">保留后台连接</string>
+    <string name="ui_e0884c97" formatted="false">自定义波特率</string>
+    <string name="ui_1303ba" formatted="false">预设</string>
+    <string name="ui_21e3a99" formatted="false">起始位</string>
+    <string name="ui_189230f" formatted="false">数据位</string>
+    <string name="ui_199ea22" formatted="false">校验位</string>
+    <string name="ui_13af987" formatted="false">停止位</string>
+    <string name="ui_d9e86" formatted="false">流控</string>
+    <string name="ui_c551c5e4" formatted="false">起始位固定为 1。预设是候选值。可用参数以当前驱动能力为准。</string>
+    <string name="ui_2e44f2cd" formatted="false">扫描设备</string>
+    <string name="ui_2df17861" formatted="false">手动映射</string>
+    <string name="ui_6ecb9307" formatted="false">待应用参数</string>
+    <string name="ui_99769055" formatted="false">保存默认参数</string>
+    <string name="ui_5364d0a5" formatted="false">未发现 USB 设备。请检查 OTG 和数据线。</string>
+    <string name="ui_e30c143b" formatted="false">等待 USB 授权</string>
+    <string name="ui_3229b26c" formatted="false">正在连接</string>
+    <string name="ui_17278f9" formatted="false">已连接</string>
+    <string name="ui_db1e0abc" formatted="false">设备已断开</string>
+    <string name="ui_42eea3bd" formatted="false">连接错误</string>
+    <string name="ui_1951431" formatted="false">未连接</string>
+    <string name="ui_b3820024" formatted="false">已获 USB 权限</string>
+    <string name="ui_f9c924b9" formatted="false">尚未获得 USB 权限</string>
+    <string name="ui_318a3afa" formatted="false">CH340/CH341 系列，精确后缀未确认。</string>
+    <string name="ui_369ee8f4" formatted="false">上次使用端口</string>
+    <string name="ui_130657" formatted="false">驱动</string>
+    <string name="ui_c59f6f9a" formatted="false">断开此设备</string>
+    <string name="ui_16b58fb6" formatted="false">独立端口会话</string>
+    <string name="ui_59665cc3" formatted="false">当前参数未知</string>
+    <string name="ui_42f6f403" formatted="false">选择会话</string>
+    <string name="ui_27485b2e" formatted="false">关闭端口</string>
+    <string name="ui_16b1c4c" formatted="false">已关闭</string>
+    <string name="ui_322429f2" formatted="false">正在打开</string>
+    <string name="ui_322255bf" formatted="false">正在关闭</string>
+    <string name="ui_888ff3ea" formatted="false">手动设备映射</string>
+    <string name="ui_3e6ef4d" formatted="false">映射仅指定驱动，不证明设备具备对应硬件能力。</string>
+    <string name="ui_a071b" formatted="false">保存</string>
+    <string name="ui_a9472" formatted="false">取消</string>
+    <string name="ui_a2003" formatted="false">会话</string>
+    <string name="ui_cb9f5d03" formatted="false">参数与诊断</string>
+    <string name="ui_503db387" formatted="false">波特率未实测</string>
+    <string name="ui_b011ea0b" formatted="false">驱动分频推算值</string>
+    <string name="ui_457fa170" formatted="false">队列溢出</string>
+    <string name="ui_3051fd85" formatted="false">显示裁剪</string>
+    <string name="ui_4cf7e053" formatted="false">通信数据丢失：未测定</string>
+    <string name="ui_6161ea90" formatted="false">发送受流控阻塞</string>
+    <string name="ui_97f1c186" formatted="false">请在设备页打开端口。</string>
+    <string name="ui_cdabc" formatted="false">显示</string>
+    <string name="ui_3b991622" formatted="false">继续显示</string>
+    <string name="ui_2fd37656" formatted="false">暂停显示</string>
+    <string name="ui_daeea" formatted="false">清屏</string>
+    <string name="ui_2ffcacc6" formatted="false">撤销清屏</string>
+    <string name="ui_4436a8f0" formatted="false">重置计数</string>
+    <string name="ui_db26af2" formatted="false">复制当前页</string>
+    <string name="ui_25b1aaae" formatted="false">保存格式</string>
+    <string name="ui_a3d65" formatted="false">分享</string>
+    <string name="ui_227aa6f" formatted="false">较早页</string>
+    <string name="ui_227a388" formatted="false">较新页</string>
+    <string name="ui_a2706083" formatted="false">保持 BREAK</string>
+    <string name="ui_6d694d5b" formatted="false">定时 BREAK</string>
+    <string name="ui_f436b12b" formatted="false">发送 HEX</string>
+    <string name="ui_284314d5" formatted="false">发送文本</string>
+    <string name="ui_ab650" formatted="false">发送</string>
+    <string name="ui_1e915ba" formatted="false">结束符</string>
+    <string name="ui_a712c" formatted="false">历史</string>
+    <string name="ui_188d061" formatted="false">新增宏</string>
+    <string name="ui_5b8f" formatted="false">宏</string>
+    <string name="ui_439fff30" formatted="false">重复发送</string>
+    <string name="ui_a2686" formatted="false">停止</string>
+    <string name="ui_6c31c4b" formatted="false">11 条 AT 指令</string>
+    <string name="ui_2842fc9f" formatted="false">发送文件</string>
+    <string name="ui_7f104f07" formatted="false">最近 50 条发送历史</string>
+    <string name="ui_a72da" formatted="false">关闭</string>
+    <string name="ui_c0cbed95" formatted="false">文件发送方式</string>
+    <string name="ui_810da32c" formatted="false">Xmodem 独占当前端口。每次等待 10 s，初次发送后最多重试 3 次。</string>
+    <string name="ui_42f96e4f" formatted="false">选择文件</string>
+    <string name="ui_ca3b2" formatted="false">支持</string>
+    <string name="ui_c60cca35" formatted="false">硬件不支持</string>
+    <string name="ui_a77d96c5" formatted="false">驱动未实现</string>
+    <string name="ui_3be58fb9" formatted="false">能力未知</string>
+    <string name="ui_40e7be8f" formatted="false">读取失败</string>
+    <string name="ui_cb9dfb1e" formatted="false">参数与能力</string>
+    <string name="ui_1727b59" formatted="false">待应用</string>
+    <string name="ui_16c9286" formatted="false">已应用</string>
+    <string name="ui_34226ed5" formatted="false">波特率报告</string>
+    <string name="ui_21ad671" formatted="false">请求值</string>
+    <string name="ui_a76b98e0" formatted="false">驱动报告值</string>
+    <string name="ui_84791a47" formatted="false">Linux 参考分频推算</string>
+    <string name="ui_84816bb5" formatted="false">外部测量：未实测。目标 1152000 的允许偏差为 ±1%。1200000 不达标。</string>
+    <string name="ui_a238023d" formatted="false">驱动接受参数不代表 UART 实际速率达标。</string>
+    <string name="ui_f4a4d4dd" formatted="false">刷新诊断与 GPIO</string>
+    <string name="ui_3d26069d" formatted="false">芯片识别</string>
+    <string name="ui_f38b522a" formatted="false">起始位调整</string>
+    <string name="ui_25d78d13" formatted="false">主频回读</string>
+    <string name="ui_63a07793" formatted="false">UART 错误状态</string>
+    <string name="ui_40df3ea9" formatted="false">设备复位</string>
+    <string name="ui_28eb7fb1" formatted="false">主频（SDK 原始值）</string>
+    <string name="ui_7d12378c" formatted="false">错误计数来自 SDK 累积状态。未获取时不能显示为 0。</string>
+    <string name="ui_2edd24b6" formatted="false">启用 GPIO</string>
+    <string name="ui_ca578" formatted="false">方向</string>
+    <string name="ui_2c987eb8" formatted="false">当前电平</string>
+    <string name="ui_ed0168f" formatted="false">输出高电平</string>
+    <string name="ui_2cc07e02" formatted="false">应用参数</string>
+    <string name="ui_1eecfb4" formatted="false">编辑宏</string>
+    <string name="ui_aa783" formatted="false">名称</string>
+    <string name="ui_a3ad4" formatted="false">内容</string>
+    <string name="ui_ff681fc" formatted="false">仅插入输入框</string>
+    <string name="ui_884c" formatted="false">行</string>
+    <string name="ui_7402e500" formatted="false">宏行延迟 ms</string>
+    <string name="ui_146dbcb" formatted="false">删除宏</string>
+    <string name="ui_7542b484" formatted="false">串口与连接</string>
+    <string name="ui_3c56be2f" formatted="false">自动重连</string>
+    <string name="ui_2d1fa4f2" formatted="false">连接期间常亮</string>
+    <string name="ui_c47e3d9" formatted="false">显示控制线区域</string>
+    <string name="ui_c34f0922" formatted="false">自动重连会重新检查 USB 权限。后台启动受系统限制时会提示返回应用。不会重放未完成的发送。</string>
+    <string name="ui_ab62e7e4" formatted="false">接收与终端</string>
+    <string name="ui_16661f7" formatted="false">字符集</string>
+    <string name="ui_2ed2333f" formatted="false">接收分隔</string>
+    <string name="ui_3050da61" formatted="false">显示缓存</string>
+    <string name="ui_5f2481be" formatted="false">不限（磁盘分页）</string>
+    <string name="ui_76b7c141" formatted="false">缓存按原始字节计量。“不限”仍受可用磁盘空间限制。持续日志独立于显示缓存。</string>
+    <string name="ui_d973a6f9" formatted="false">显示时间戳</string>
+    <string name="ui_1be46ed5" formatted="false">时间戳包含日期</string>
+    <string name="ui_5a042dee" formatted="false">显示状态消息</string>
+    <string name="ui_e355ad1d" formatted="false">可视化控制字符</string>
+    <string name="ui_396e9370" formatted="false">等宽字体</string>
+    <string name="ui_b6380" formatted="false">字号</string>
+    <string name="ui_27cd27ed" formatted="false">刷新间隔 ms</string>
+    <string name="ui_97930306" formatted="false">VT100 列数</string>
+    <string name="ui_97999371" formatted="false">VT100 行数</string>
+    <string name="ui_28403191" formatted="false">发送与宏</string>
+    <string name="ui_30386fa4" formatted="false">本地回显</string>
+    <string name="ui_8f1ecb96" formatted="false">发送成功后清空输入</string>
+    <string name="ui_f39f9782" formatted="false">使用 KiB 计数</string>
+    <string name="ui_5ba4373c" formatted="false">清屏时重置计数</string>
+    <string name="ui_2b364d04" formatted="false">宏栏行数</string>
+    <string name="ui_1057b0b1" formatted="false">行延迟 ms</string>
+    <string name="ui_71cdb42e" formatted="false">字符延迟 ms</string>
+    <string name="ui_cca9fee5" formatted="false">按完整字符延迟（文本）</string>
+    <string name="ui_41f8de30" formatted="false">重复次数，0 为不限</string>
+    <string name="ui_3efb7dc6" formatted="false">重复间隔 ms</string>
+    <string name="ui_c8a3850b" formatted="false">日志与文件</string>
+    <string name="ui_932d935e" formatted="false">持续记录收发日志</string>
+    <string name="ui_bb0bccf6" formatted="false">日志使用 HEX</string>
+    <string name="ui_53ef5b56" formatted="false">保存目录：应用内部目录</string>
+    <string name="ui_42fb9a27" formatted="false">选择目录</string>
+    <string name="ui_8c1e51a6" formatted="false">恢复应用目录</string>
+    <string name="ui_506acfcd" formatted="false">目录权限失效时会停止日志并显示错误。已有文件会正常收尾。可重新选择目录或恢复应用目录。</string>
+    <string name="ui_43fa9806" formatted="false">配置管理</string>
+    <string name="ui_2b1625bf" formatted="false">导出配置</string>
+    <string name="ui_2b13f66a" formatted="false">导入配置</string>
+    <string name="ui_11f4ca4" formatted="false">导入会替换设置、宏和设备映射。连接状态、历史命令和文件访问权限不随配置恢复。</string>
+    <string name="ui_4436c671" formatted="false">重置设置</string>
+    <string name="ui_2331c6e" formatted="false">重置宏</string>
+    <string name="ui_111b7f6e" formatted="false">重置设备映射</string>
+    <string name="ui_1c16267d" formatted="false">系统与语言</string>
+    <string name="ui_117bb3" formatted="false">语言</string>
+    <string name="ui_30b128cc" formatted="false">应用通知已启用</string>
+    <string name="ui_30d3c404" formatted="false">应用通知未启用</string>
+    <string name="ui_1a550e60" formatted="false">连接渠道：</string>
+    <string name="ui_16b504b" formatted="false">已启用</string>
+    <string name="ui_2b6b8a8f" formatted="false">尚未创建</string>
+    <string name="ui_f5b3f6dc" formatted="false">申请通知权限</string>
+    <string name="ui_4354bfbb" formatted="false">通知设置</string>
+    <string name="ui_36efc27b" formatted="false">电池设置</string>
+    <string name="ui_40ff1be4" formatted="false">联系方式（可留空）</string>
+    <string name="ui_8b628b78" formatted="false">保存联系方式</string>
+    <string name="ui_37b522b2" formatted="false">重新显示使用提示</string>
+    <string name="ui_38dce2b7" formatted="false">确认重置</string>
+    <string name="ui_c0f29bbe" formatted="false">仅重置选中的配置域。</string>
+    <string name="ui_122741" formatted="false">重置</string>
+    <string name="ui_25e766b3" formatted="false">使用提示</string>
+    <string name="ui_9564adb6" formatted="false">先在设备页选择端口。默认参数为 115200 / 8N1 / 无流控。目标速率尚未实测。请先查看参数与诊断。</string>
+    <string name="ui_1d3db38" formatted="false">知道了</string>
+    <string name="ui_a2b7b" formatted="false">关于</string>
+    <string name="ui_e9f8d086" formatted="false">串口助手 1.0</string>
+    <string name="ui_5a1f6a83" formatted="false">致谢：usb-serial-for-android、AndroidX、Kotlin。</string>
+    <string name="ui_b3f37f9a" formatted="false">已集成 WCH 官方 Android SDK 2.3 包。选择 WchOfficial 驱动后，可查询芯片、主频、UART 错误和 GPIO。能力按设备分别确认。该 SDK 未提供公开复位接口。</string>
+    <string name="ui_100727" formatted="false">联系</string>
+    <string name="ui_134af1c9" formatted="false">连接与速率说明</string>
+    <string name="ui_dd8dfa91" formatted="false">主要目标为小米15Pro与 CH340G。当前未完成真机兼容验收。仅凭 VID/PID 不能确认 CH340G 后缀。</string>
+    <string name="ui_a42189a9" formatted="false">1152000 必须用独立仪器测量 UART 位宽。允许偏差为 ±1%。请求值、驱动报告值、分频推算值和实测值分别显示。1200000 不能标记为达标。</string>
+    <string name="ui_b68b733b" formatted="false">起始位固定为 1。其他参数按驱动能力开放。灰色入口会说明硬件不支持、驱动未实现或能力未知。读取失败单独报告。</string>
+    <string name="ui_3b8074c0" formatted="false">收发、文件与终端</string>
+    <string name="ui_680547d7" formatted="false">发送字节计数仅表示驱动确认写入 USB 的字节，不代表对端已经收到。发生部分写入时不会自动重发整条命令。</string>
+    <string name="ui_b459b0ce" formatted="false">应用队列溢出与显示裁剪分别计数。普通串口字节流不能直接确定通信丢失数量。需要对端序号与校验。</string>
+    <string name="ui_648340c5" formatted="false">Xmodem 支持校验和、CRC 和 1K 发送。每次等待 10 s。初次发送后最多重试 3 次。文件接收不在范围内。</string>
+    <string name="ui_307c98b" formatted="false">VT100 默认 80×24。支持光标、擦除、滚动区域、字符属性、光标保存恢复及常用控制键。可在设置页调整尺寸。</string>
+    <string name="ui_e4714d06" formatted="false">11 条 AT 指令面向串口对端模组。ATE1 会启用模组回显。可使用停止按钮中断序列。</string>
+    <string name="ui_2d7c37fe" formatted="false">锁屏与后台运行</string>
+    <string name="ui_d0be306d" formatted="false">连接由 connectedDevice 前台服务持有。通知支持返回应用与断开全部端口。请通过系统通知和电池设置管理后台限制。</string>
+    <string name="ui_ee5c64b8" formatted="false">锁屏持续收发仍需小米15Pro真机验证。进程重新启动后会重新检查设备与权限。不会恢复虚假的已连接状态。</string>
+    <string name="ui_fe4470e9" formatted="false">应用内部日志</string>
+    <string name="ui_267d2eb7" formatted="false">分享日志</string>
+</resources>

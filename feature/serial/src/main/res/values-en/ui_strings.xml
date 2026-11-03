@@ -1,0 +1,204 @@
+<resources>
+    <string name="ui_24d0f873" formatted="false">Serial Assistant</string>
+    <string name="ui_11c1fa" formatted="false">Exit</string>
+    <string name="ui_fd527" formatted="false">Terminal</string>
+    <string name="ui_114509" formatted="false">Devices</string>
+    <string name="ui_116b70" formatted="false">Settings</string>
+    <string name="ui_bba3b" formatted="false">Help</string>
+    <string name="ui_8a5aee8b" formatted="false">Ports are open</string>
+    <string name="ui_3f6d3bee" formatted="false">Close the ports and exit, or keep the background connection.</string>
+    <string name="ui_c15fc1d6" formatted="false">Close and exit</string>
+    <string name="ui_e51ea3c5" formatted="false">Keep connected</string>
+    <string name="ui_e0884c97" formatted="false">Custom baud rate</string>
+    <string name="ui_1303ba" formatted="false">Preset</string>
+    <string name="ui_21e3a99" formatted="false">Start bits</string>
+    <string name="ui_189230f" formatted="false">Data bits</string>
+    <string name="ui_199ea22" formatted="false">Parity</string>
+    <string name="ui_13af987" formatted="false">Stop bits</string>
+    <string name="ui_d9e86" formatted="false">Flow control</string>
+    <string name="ui_c551c5e4" formatted="false">Start bits are fixed at 1. Presets are candidates. The active driver defines available parameters.</string>
+    <string name="ui_2e44f2cd" formatted="false">Scan devices</string>
+    <string name="ui_2df17861" formatted="false">Manual mapping</string>
+    <string name="ui_6ecb9307" formatted="false">Pending parameters</string>
+    <string name="ui_99769055" formatted="false">Save defaults</string>
+    <string name="ui_5364d0a5" formatted="false">No USB devices found. Check OTG and the data cable.</string>
+    <string name="ui_e30c143b" formatted="false">Waiting for USB permission</string>
+    <string name="ui_3229b26c" formatted="false">Connecting</string>
+    <string name="ui_17278f9" formatted="false">Connected</string>
+    <string name="ui_db1e0abc" formatted="false">Detached</string>
+    <string name="ui_42eea3bd" formatted="false">Connection error</string>
+    <string name="ui_1951431" formatted="false">Not connected</string>
+    <string name="ui_b3820024" formatted="false">USB permission granted</string>
+    <string name="ui_f9c924b9" formatted="false">USB permission required</string>
+    <string name="ui_318a3afa" formatted="false">CH340/CH341 family. Exact variant is unknown.</string>
+    <string name="ui_369ee8f4" formatted="false">Last used port</string>
+    <string name="ui_130657" formatted="false">Driver</string>
+    <string name="ui_c59f6f9a" formatted="false">Disconnect device</string>
+    <string name="ui_16b58fb6" formatted="false">Independent port sessions</string>
+    <string name="ui_59665cc3" formatted="false">Parameters unknown</string>
+    <string name="ui_42f6f403" formatted="false">Select session</string>
+    <string name="ui_27485b2e" formatted="false">Close port</string>
+    <string name="ui_16b1c4c" formatted="false">Disabled</string>
+    <string name="ui_322429f2" formatted="false">Opening</string>
+    <string name="ui_322255bf" formatted="false">Closing</string>
+    <string name="ui_888ff3ea" formatted="false">Manual device mapping</string>
+    <string name="ui_3e6ef4d" formatted="false">A mapping selects a driver. It does not prove hardware support.</string>
+    <string name="ui_a071b" formatted="false">Save</string>
+    <string name="ui_a9472" formatted="false">Cancel</string>
+    <string name="ui_a2003" formatted="false">Session</string>
+    <string name="ui_cb9f5d03" formatted="false">Parameters</string>
+    <string name="ui_503db387" formatted="false">Baud rate not measured</string>
+    <string name="ui_b011ea0b" formatted="false">Driver divisor estimate</string>
+    <string name="ui_457fa170" formatted="false">Queue overflow</string>
+    <string name="ui_3051fd85" formatted="false">Display trim</string>
+    <string name="ui_4cf7e053" formatted="false">Communication loss: not determined</string>
+    <string name="ui_6161ea90" formatted="false">Transmit blocked by flow control</string>
+    <string name="ui_97f1c186" formatted="false">Open a port on the Devices page.</string>
+    <string name="ui_cdabc" formatted="false">Display</string>
+    <string name="ui_3b991622" formatted="false">Resume</string>
+    <string name="ui_2fd37656" formatted="false">Pause</string>
+    <string name="ui_daeea" formatted="false">Clear</string>
+    <string name="ui_2ffcacc6" formatted="false">Undo clear</string>
+    <string name="ui_4436a8f0" formatted="false">Reset counters</string>
+    <string name="ui_db26af2" formatted="false">Copy page</string>
+    <string name="ui_25b1aaae" formatted="false">Save format</string>
+    <string name="ui_a3d65" formatted="false">Share</string>
+    <string name="ui_227aa6f" formatted="false">Older</string>
+    <string name="ui_227a388" formatted="false">Newer</string>
+    <string name="ui_a2706083" formatted="false">Hold BREAK</string>
+    <string name="ui_6d694d5b" formatted="false">Timed BREAK</string>
+    <string name="ui_f436b12b" formatted="false">Send HEX</string>
+    <string name="ui_284314d5" formatted="false">Send text</string>
+    <string name="ui_ab650" formatted="false">Send</string>
+    <string name="ui_1e915ba" formatted="false">Ending</string>
+    <string name="ui_a712c" formatted="false">History</string>
+    <string name="ui_188d061" formatted="false">Add macro</string>
+    <string name="ui_5b8f" formatted="false">Macros</string>
+    <string name="ui_439fff30" formatted="false">Repeat</string>
+    <string name="ui_a2686" formatted="false">Stop</string>
+    <string name="ui_6c31c4b" formatted="false">11 AT commands</string>
+    <string name="ui_2842fc9f" formatted="false">Send file</string>
+    <string name="ui_7f104f07" formatted="false">Last 50 commands</string>
+    <string name="ui_a72da" formatted="false">Close</string>
+    <string name="ui_c0cbed95" formatted="false">File transfer mode</string>
+    <string name="ui_810da32c" formatted="false">Xmodem owns this port. Each wait lasts 10 s. Each send permits up to 3 retries.</string>
+    <string name="ui_42f96e4f" formatted="false">Select file</string>
+    <string name="ui_ca3b2" formatted="false">Supported</string>
+    <string name="ui_c60cca35" formatted="false">Hardware unsupported</string>
+    <string name="ui_a77d96c5" formatted="false">Driver not implemented</string>
+    <string name="ui_3be58fb9" formatted="false">Unknown capability</string>
+    <string name="ui_40e7be8f" formatted="false">Read failed</string>
+    <string name="ui_cb9dfb1e" formatted="false">Parameters and capabilities</string>
+    <string name="ui_1727b59" formatted="false">Pending</string>
+    <string name="ui_16c9286" formatted="false">Applied</string>
+    <string name="ui_34226ed5" formatted="false">Baud-rate report</string>
+    <string name="ui_21ad671" formatted="false">Requested</string>
+    <string name="ui_a76b98e0" formatted="false">Driver reported</string>
+    <string name="ui_84791a47" formatted="false">Linux reference divisor estimate</string>
+    <string name="ui_84816bb5" formatted="false">External measurement: not measured. The target is 1152000 ±1%. 1200000 does not pass.</string>
+    <string name="ui_a238023d" formatted="false">Driver acceptance does not prove the UART baud rate.</string>
+    <string name="ui_f4a4d4dd" formatted="false">Refresh diagnostics and GPIO</string>
+    <string name="ui_3d26069d" formatted="false">Chip identification</string>
+    <string name="ui_f38b522a" formatted="false">Start-bit adjustment</string>
+    <string name="ui_25d78d13" formatted="false">Clock readback</string>
+    <string name="ui_63a07793" formatted="false">UART errors</string>
+    <string name="ui_40df3ea9" formatted="false">Device reset</string>
+    <string name="ui_28eb7fb1" formatted="false">Clock (raw SDK value)</string>
+    <string name="ui_7d12378c" formatted="false">Error counts come from SDK cumulative state. Unavailable counts must not appear as zero.</string>
+    <string name="ui_2edd24b6" formatted="false">Enable GPIO</string>
+    <string name="ui_ca578" formatted="false">Direction</string>
+    <string name="ui_2c987eb8" formatted="false">Current level</string>
+    <string name="ui_ed0168f" formatted="false">Output high</string>
+    <string name="ui_2cc07e02" formatted="false">Apply</string>
+    <string name="ui_1eecfb4" formatted="false">Edit macro</string>
+    <string name="ui_aa783" formatted="false">Name</string>
+    <string name="ui_a3ad4" formatted="false">Content</string>
+    <string name="ui_ff681fc" formatted="false">Insert only</string>
+    <string name="ui_884c" formatted="false">Row</string>
+    <string name="ui_7402e500" formatted="false">Macro line delay, ms</string>
+    <string name="ui_146dbcb" formatted="false">Delete macro</string>
+    <string name="ui_7542b484" formatted="false">Serial and connection</string>
+    <string name="ui_3c56be2f" formatted="false">Auto reconnect</string>
+    <string name="ui_2d1fa4f2" formatted="false">Keep screen on while connected</string>
+    <string name="ui_c47e3d9" formatted="false">Show control lines</string>
+    <string name="ui_c34f0922" formatted="false">Reconnect checks USB permission again. If Android blocks background start, return to the app. Unfinished commands are never replayed.</string>
+    <string name="ui_ab62e7e4" formatted="false">Receive and terminal</string>
+    <string name="ui_16661f7" formatted="false">Charset</string>
+    <string name="ui_2ed2333f" formatted="false">Receive delimiter</string>
+    <string name="ui_3050da61" formatted="false">Display buffer</string>
+    <string name="ui_5f2481be" formatted="false">Unlimited (disk pages)</string>
+    <string name="ui_76b7c141" formatted="false">The display limit counts raw bytes. Unlimited mode uses disk space. Communication logs are independent.</string>
+    <string name="ui_d973a6f9" formatted="false">Show timestamps</string>
+    <string name="ui_1be46ed5" formatted="false">Include date</string>
+    <string name="ui_5a042dee" formatted="false">Show status messages</string>
+    <string name="ui_e355ad1d" formatted="false">Show control characters</string>
+    <string name="ui_396e9370" formatted="false">Monospace font</string>
+    <string name="ui_b6380" formatted="false">Font size</string>
+    <string name="ui_27cd27ed" formatted="false">Refresh interval, ms</string>
+    <string name="ui_97930306" formatted="false">VT100 columns</string>
+    <string name="ui_97999371" formatted="false">VT100 rows</string>
+    <string name="ui_28403191" formatted="false">Send and macros</string>
+    <string name="ui_30386fa4" formatted="false">Local echo</string>
+    <string name="ui_8f1ecb96" formatted="false">Clear input after successful send</string>
+    <string name="ui_f39f9782" formatted="false">Count in KiB</string>
+    <string name="ui_5ba4373c" formatted="false">Reset counters on clear</string>
+    <string name="ui_2b364d04" formatted="false">Macro rows</string>
+    <string name="ui_1057b0b1" formatted="false">Line delay, ms</string>
+    <string name="ui_71cdb42e" formatted="false">Character delay, ms</string>
+    <string name="ui_cca9fee5" formatted="false">Delay by complete character (text)</string>
+    <string name="ui_41f8de30" formatted="false">Repeat count, 0 means unlimited</string>
+    <string name="ui_3efb7dc6" formatted="false">Repeat interval, ms</string>
+    <string name="ui_c8a3850b" formatted="false">Logs and files</string>
+    <string name="ui_932d935e" formatted="false">Record communication logs</string>
+    <string name="ui_bb0bccf6" formatted="false">Use HEX in logs</string>
+    <string name="ui_53ef5b56" formatted="false">Save directory: app internal storage</string>
+    <string name="ui_42fb9a27" formatted="false">Choose directory</string>
+    <string name="ui_8c1e51a6" formatted="false">Use app directory</string>
+    <string name="ui_506acfcd" formatted="false">If directory access fails, logging stops and shows an error. Existing files are closed. Select the directory again or use app storage.</string>
+    <string name="ui_43fa9806" formatted="false">Configuration</string>
+    <string name="ui_2b1625bf" formatted="false">Export configuration</string>
+    <string name="ui_2b13f66a" formatted="false">Import configuration</string>
+    <string name="ui_11f4ca4" formatted="false">Import replaces settings, macros and mappings. Connection state, command history and file permissions are not restored.</string>
+    <string name="ui_4436c671" formatted="false">Reset settings</string>
+    <string name="ui_2331c6e" formatted="false">Reset macros</string>
+    <string name="ui_111b7f6e" formatted="false">Reset mappings</string>
+    <string name="ui_1c16267d" formatted="false">System and language</string>
+    <string name="ui_117bb3" formatted="false">Language</string>
+    <string name="ui_30b128cc" formatted="false">App notifications enabled</string>
+    <string name="ui_30d3c404" formatted="false">App notifications disabled</string>
+    <string name="ui_1a550e60" formatted="false">Connection channel: </string>
+    <string name="ui_16b504b" formatted="false">Enabled</string>
+    <string name="ui_2b6b8a8f" formatted="false">Not created</string>
+    <string name="ui_f5b3f6dc" formatted="false">Request notification permission</string>
+    <string name="ui_4354bfbb" formatted="false">Notification settings</string>
+    <string name="ui_36efc27b" formatted="false">Battery settings</string>
+    <string name="ui_40ff1be4" formatted="false">Contact (optional)</string>
+    <string name="ui_8b628b78" formatted="false">Save contact</string>
+    <string name="ui_37b522b2" formatted="false">Show usage hints again</string>
+    <string name="ui_38dce2b7" formatted="false">Confirm reset</string>
+    <string name="ui_c0f29bbe" formatted="false">Reset only the selected configuration domain.</string>
+    <string name="ui_122741" formatted="false">Reset</string>
+    <string name="ui_25e766b3" formatted="false">Usage hints</string>
+    <string name="ui_9564adb6" formatted="false">Select a port on the Devices page. Defaults are 115200 / 8N1 / no flow control. The target rate is not measured. Check Parameters first.</string>
+    <string name="ui_1d3db38" formatted="false">OK</string>
+    <string name="ui_a2b7b" formatted="false">About</string>
+    <string name="ui_e9f8d086" formatted="false">Serial Assistant 1.0</string>
+    <string name="ui_5a1f6a83" formatted="false">Thanks: usb-serial-for-android, AndroidX and Kotlin.</string>
+    <string name="ui_b3f37f9a" formatted="false">WCH Android SDK package 2.3 is included. Select WchOfficial to query the chip, clock, UART errors and GPIO. Capabilities depend on the device. This SDK exposes no reset API.</string>
+    <string name="ui_100727" formatted="false">Contact</string>
+    <string name="ui_134af1c9" formatted="false">Connection and rate</string>
+    <string name="ui_dd8dfa91" formatted="false">Primary targets are Xiaomi 15 Pro and CH340G. Device acceptance is pending. VID/PID alone does not prove the CH340G variant.</string>
+    <string name="ui_a42189a9" formatted="false">Measure UART bit width with an independent instrument. The target is 1152000 ±1%. Requested, reported, estimated and measured rates remain separate. 1200000 does not pass.</string>
+    <string name="ui_b68b733b" formatted="false">Start bits are fixed at 1. Driver capabilities control other parameters. Disabled actions show the capability state. Read errors are reported separately.</string>
+    <string name="ui_3b8074c0" formatted="false">Data, files and terminal</string>
+    <string name="ui_680547d7" formatted="false">Transmit counts show bytes accepted by USB. They do not prove delivery to the peer. A partial write never repeats the whole command.</string>
+    <string name="ui_b459b0ce" formatted="false">Queue overflow and display trimming have separate counters. A raw serial stream cannot quantify communication loss. Peer sequence numbers and checks are required.</string>
+    <string name="ui_648340c5" formatted="false">Xmodem supports checksum, CRC and 1K sending. Each wait lasts 10 s. A send permits up to 3 retries. File reception is outside scope.</string>
+    <string name="ui_307c98b" formatted="false">VT100 starts at 80×24. It supports cursor movement, erase, scroll regions, text attributes, cursor save and restore, and common keys. Change dimensions in Settings.</string>
+    <string name="ui_e4714d06" formatted="false">The 11 AT commands address the peer modem. ATE1 enables modem echo. Use Stop to cancel the sequence.</string>
+    <string name="ui_2d7c37fe" formatted="false">Lock screen and background</string>
+    <string name="ui_d0be306d" formatted="false">A connectedDevice foreground service owns connections. The notification opens the app or disconnects all ports. Use system notification and battery settings.</string>
+    <string name="ui_ee5c64b8" formatted="false">Lock-screen operation needs Xiaomi 15 Pro testing. After process restart, the app checks devices and permission again. It never restores a false connected state.</string>
+    <string name="ui_fe4470e9" formatted="false">Internal log files</string>
+    <string name="ui_267d2eb7" formatted="false">Share log</string>
+</resources>

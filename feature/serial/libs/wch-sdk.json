@@ -1,0 +1,11 @@
+{
+  "packageVersion": "2.3",
+  "internalLibraryVersion": null,
+  "officialPage": "https://www.wch.cn/downloads/CH341SER_ANDROID_ZIP.html",
+  "downloadUrl": "https://github.com/WCH-IC/download/releases/download/CH341/CH341SER_ANDROID.ZIP",
+  "packageSha256": "9A41CC0B5A73D233F228B0AE1E475320D98093055CA5140796EB66CC277C41B0",
+  "artifact": "CH34XUartDriver-2.3.jar",
+  "artifactSha256": "12869751A6A26B57066F9C68059B87DE74D00C88147BC4DDFF43ADF5618BFD6A",
+  "publicResetApi": false,
+  "hardwareValidated": false
+}

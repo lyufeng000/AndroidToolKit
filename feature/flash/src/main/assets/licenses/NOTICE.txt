@@ -1,0 +1,35 @@
+代码烧入使用下列开源组件。完整许可证位于本目录。
+
+OpenOCD 0.12.0：GPL-2.0-or-later
+https://github.com/openocd-org/openocd/tree/v0.12.0
+Jim Tcl a77ef1a6218fad4c928ddbdc03c1aedc41007e70：BSD
+https://github.com/msteveb/jimtcl
+libjaylink 0d23921a05d5d427332a142d154c213d0c306eb1：GPL-2.0-or-later
+https://gitlab.zapb.de/libjaylink/libjaylink
+libusb 1.0.27：LGPL-2.1-or-later
+https://github.com/libusb/libusb/tree/v1.0.27
+
+对应源码随项目存放于 feature/flash/third_party。
+Android USB 桥接源码位于 feature/flash/native/usb_fd.c。
+
+LLVM / Clang / LLD 21.1.8：Apache-2.0 WITH LLVM-exception
+https://github.com/llvm/llvm-project/tree/llvmorg-21.1.8
+编译器二进制来自 Termux。
+https://github.com/termux/termux-packages
+精确包版本与 SHA256 位于 feature/flash/native/compiler-packages.json。
+
+libc++：Apache-2.0 WITH LLVM-exception
+libffi：MIT
+libxml2：MIT
+ncurses：MIT
+zlib：Zlib
+zstd：BSD-3-Clause / GPL-2.0
+libiconv：LGPL-2.1-or-later
+libandroid-glob：BSD
+
+Arm 标准库来自 xPack Arm GNU Toolchain 15.2.1-1.1。
+https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/tag/v15.2.1-1.1
+newlib：多个宽松许可证，见 newlib.txt。
+libgcc / libstdc++：GPL-3.0 WITH GCC-exception-3.1，见 GCC-COPYING.RUNTIME.txt。
+
+此应用通过子进程调用 OpenOCD。此应用不包含 SEGGER SDK。

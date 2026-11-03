@@ -1,0 +1,7 @@
+<resources>
+    <style name="Base.Theme.AndroidToolKit" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">#121318</item>
+        <item name="android:colorBackground">#121318</item>
+    </style>
+</resources>

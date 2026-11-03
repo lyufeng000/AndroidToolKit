@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">峰的工具箱</string>
+    <string name="serial_tool">串口调试</string>
+    <string name="serial_tool_description">USB 串口收发与调试</string>
+</resources>

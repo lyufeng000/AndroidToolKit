@@ -1,15 +1,17 @@
 pluginManagement {
     repositories {
-        maven("https://maven.aliyun.com/repository/google") {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
+        if (System.getenv("GITHUB_ACTIONS") != "true") {
+            maven("https://maven.aliyun.com/repository/google") {
+                content {
+                    includeGroupByRegex("com\\.android.*")
+                    includeGroupByRegex("com\\.google.*")
+                    includeGroupByRegex("androidx.*")
+                }
             }
+            maven("https://maven.aliyun.com/repository/public")
         }
-        maven("https://maven.aliyun.com/repository/public")
-        google()
         mavenCentral()
+        google()
         gradlePluginPortal()
     }
 }
@@ -17,16 +19,18 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        maven("https://maven.aliyun.com/repository/google") {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
+        if (System.getenv("GITHUB_ACTIONS") != "true") {
+            maven("https://maven.aliyun.com/repository/google") {
+                content {
+                    includeGroupByRegex("com\\.android.*")
+                    includeGroupByRegex("com\\.google.*")
+                    includeGroupByRegex("androidx.*")
+                }
             }
+            maven("https://maven.aliyun.com/repository/public")
         }
-        maven("https://maven.aliyun.com/repository/public")
-        google()
         mavenCentral()
+        google()
         maven("https://jitpack.io") {
             content { includeGroup("com.github.mik3y") }
         }

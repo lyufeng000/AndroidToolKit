@@ -293,6 +293,27 @@ private fun shortIdentifiers(ids: Collection<String>): Map<String,String> {
     }},confirmButton={TextButton(enabled=valid,onClick={vm.saveMapping(vendor.toInt(16),product.toInt(16),driver);dismiss()}) {Text(tr("保存","Save"))}},dismissButton={TextButton(onClick=dismiss) {Text(tr("取消","Cancel"))}})
 }
 
+private data class DisplayPart(val record: DisplayRecord, val start: Int, val end: Int) {
+    val key: String get() = "${record.key}:$start"
+}
+
+private fun displayParts(records: List<DisplayRecord>): List<DisplayPart> = buildList {
+    for(record in records) {
+        var start=0
+        while(start < record.text.length) {
+            // Bound the height of each lazy item, including responses made up of line breaks.
+            var end=start+minOf(256,record.text.length-start)
+            if(end < record.text.length) {
+                val before=record.text[end-1]
+                val after=record.text[end]
+                if((before.isHighSurrogate() && after.isLowSurrogate()) || (before == '\r' && after == '\n')) end--
+            }
+            add(DisplayPart(record,start,end))
+            start=end
+        }
+    }
+}
+
 @Composable private fun TerminalScreen(vm: SerialViewModel, settings: AppSettings, session: SerialSession?, toolsOpen: Boolean, closeTools: () -> Unit, openDevices: () -> Unit) {
     val sessions by vm.manager.sessions.collectAsStateWithLifecycle()
     val input by vm.input.collectAsStateWithLifecycle()
@@ -357,12 +378,20 @@ private fun shortIdentifiers(ids: Collection<String>): Map<String,String> {
         Surface(Modifier.fillMaxWidth().weight(1f),shape=MaterialTheme.shapes.small,color=MaterialTheme.colorScheme.surfaceContainerLow) {
             if(settings.displayMode == "VT100" && session != null) TerminalGrid(session,settings,paused)
             else {
+                val parts=remember(records) { displayParts(records) }
                 val list=rememberLazyListState()
-                LaunchedEffect(records.lastOrNull()?.key,paused) {if(!paused && records.isNotEmpty()) list.scrollToItem(records.lastIndex)}
+                LaunchedEffect(parts.lastOrNull()?.key,paused) {if(!paused && parts.isNotEmpty()) list.scrollToItem(parts.lastIndex)}
                 SelectionContainer { LazyColumn(Modifier.fillMaxSize().padding(8.dp),state=list) {
-                    items(records,key={it.key}) { record ->
+                    items(parts,key={it.key}) { part ->
+                        val record=part.record
                         val color=when(record.direction) { Direction.RX -> MaterialTheme.colorScheme.onSurface; Direction.TX -> MaterialTheme.colorScheme.primary; Direction.ERROR -> MaterialTheme.colorScheme.error; Direction.STATUS -> MaterialTheme.colorScheme.secondary }
-                        Text(buildString {if(record.time.isNotEmpty()) append(record.time).append(' ');append(if(record.direction == Direction.TX) "→ " else if(record.direction == Direction.RX) "← " else "• ");append(record.text)},
+                        Text(buildString {
+                            if(part.start == 0) {
+                                if(record.time.isNotEmpty()) append(record.time).append(' ')
+                                append(when(record.direction) {Direction.TX -> "→ "; Direction.RX -> "← "; else -> "• "})
+                            }
+                            append(record.text,part.start,part.end)
+                        },
                             color=color,fontSize=settings.fontSize.sp,fontFamily=if(settings.monospace) FontFamily.Monospace else FontFamily.Default)
                     }
                 } }

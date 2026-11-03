@@ -16,6 +16,7 @@ import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicLong
+import java.util.concurrent.atomic.AtomicReference
 
 /** The SDK owns one connection per device. The hub owns its lifetime across all ports. */
 class WchDeviceHub(private val application: Application) {
@@ -85,6 +86,7 @@ class WchDriverAdapter internal constructor(private val hub: WchDeviceHub,privat
     override val driverName=WchDeviceHub.DRIVER
     private val closed=AtomicBoolean(false)
     private val incoming=BoundedReceiveBuffer(128)
+    private val receiveFailure=AtomicReference<IOException?>(null)
     private val lines=ConcurrentHashMap<String,Boolean>()
     private var detected: DriverDiagnostics?=null
     private val chip get()=sdk.getChipType(device)
@@ -105,6 +107,10 @@ class WchDriverAdapter internal constructor(private val hub: WchDeviceHub,privat
     }
     internal fun receive(data: ByteArray,length: Int) {
         if(closed.get()) return
+        if(length !in 0..data.size) {
+            receiveFailure.compareAndSet(null,IOException("WCH receive callback length $length exceeds valid range 0..${data.size}"))
+            return
+        }
         incoming.offer(data,length)
     }
     internal fun modem(cts: Boolean,dsr: Boolean,ring: Boolean,dcd: Boolean) {
@@ -124,6 +130,7 @@ class WchDriverAdapter internal constructor(private val hub: WchDeviceHub,privat
     }
     override fun read(buffer: ByteArray): Int {
         if(closed.get()) throw IOException("WCH port closed")
+        receiveFailure.get()?.let { throw it }
         val count=incoming.read(buffer)
         if(count == 0 && !sdk.isConnected(device)) throw IOException("WCH device disconnected")
         return count

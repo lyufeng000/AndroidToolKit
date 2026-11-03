@@ -17,6 +17,8 @@ data class EventPage(
 
 class StaleEventPageException : IllegalStateException("Display history changed during replay")
 
+private const val MAX_MEMORY_EVENTS = 8192
+
 /** The unlimited display mode keeps its index on disk as well as its event payloads. */
 class EventStore(private val directory: File, val sessionId: String) : Closeable {
     private val memory = ArrayDeque<SerialEvent>()
@@ -62,12 +64,13 @@ class EventStore(private val directory: File, val sessionId: String) : Closeable
             val recovered=ArrayDeque<SerialEvent>()
             var recoveredBytes=0L
             var recoveredMessages=0
-            for(p in 0 until pageCount()) {
+            recovery@ for(p in 0 until pageCount()) {
                 val block=page(p)
                 for(e in block.asReversed()) {
                     if(e.data.isEmpty() && recoveredMessages >= 512) continue
                     recovered.addFirst(e);recoveredBytes+=e.data.size
                     if(e.data.isEmpty()) recoveredMessages++
+                    if(recovered.size == MAX_MEMORY_EVENTS) break@recovery
                 }
                 if(recoveredBytes >= value) break
             }
@@ -100,9 +103,10 @@ class EventStore(private val directory: File, val sessionId: String) : Closeable
     }
     private fun trim() {
         if(limit == 0) return
-        while(bytes > limit) {
+        while(bytes > limit || memory.size > MAX_MEMORY_EVENTS) {
+            val overEventLimit = memory.size > MAX_MEMORY_EVENTS
             val first = memory.removeFirst(); val excess = (bytes-limit).coerceAtLeast(0)
-            if(excess in 1 until first.data.size.toLong()) {
+            if(!overEventLimit && excess in 1 until first.data.size.toLong()) {
                 val removed = excess.toInt(); memory.addFirst(first.copy(data=first.data.copyOfRange(removed,first.data.size)))
                 bytes -= removed; trimmedBytes += removed; historyTruncated=true
             } else { bytes -= first.data.size; trimmedBytes += first.data.size; if(first.data.isNotEmpty()) historyTruncated=true }

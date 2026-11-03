@@ -32,7 +32,7 @@
 
 在 Windows PowerShell 中运行 `./Build.ps1`，生成 `AndroidToolKit-debug.apk`。脚本将源文件暂存到 `D:\Data\.temp`，以便 KSP 在同一磁盘生成 Room 代码。也可以使用 `-Tasks` 指定 Gradle 任务。
 
-推送分支后，GitHub Actions 会运行 [Build Android APK](https://github.com/lyufeng000/AndroidToolKit/actions/workflows/android-build.yml)。也可以在 Actions 页面手动启动。构建成功后，在运行记录的 Artifacts 区域下载 `AndroidToolKit-debug`。
+推送分支后，GitHub Actions 会运行 [Build Android APK](https://github.com/lyufeng000/AndroidToolKit/actions/workflows/android-build.yml)。也可以在 Actions 页面手动启动分支构建。构建成功后，在运行记录的 Artifacts 区域下载 `AndroidToolKit-debug`。
 
 工具箱和原串口应用可以同时安装。要转移原应用中的配置，请在原应用中导出配置，再在工具箱的串口设置中导入。原应用的历史记录和文件目录授权不会自动转移。
 
@@ -44,9 +44,17 @@
 
 应用首次进入首页时会查询 [GitHub Releases](https://github.com/lyufeng000/AndroidToolKit/releases) 的最新稳定版。也可以在首页点按「检查更新」。发现新版本后，应用会提示下载。下载验证完成后，在 Android 安装界面确认更新。
 
-发布更新时，执行以下步骤。
+首次发布前，在 GitHub 仓库的 Actions secrets 中配置以下值。后续版本使用同一个签名密钥。
+
+| Secret | 值 |
+| --- | --- |
+| `APK_KEYSTORE_BASE64` | Base64 编码的签名密钥库文件 |
+| `APK_KEYSTORE_PASSWORD` | 密钥库密码 |
+| `APK_KEY_ALIAS` | 签名密钥别名 |
+| `APK_KEY_PASSWORD` | 签名密钥密码 |
+
+发布新版本时，执行以下步骤。
 
 1. 在 `app/build.gradle.kts` 提高 `versionCode` 和 `versionName`。
-2. 使用与已分发版本相同的签名密钥签署 APK。
-3. 在 `lyufeng000/AndroidToolKit` 创建公开稳定版 Release。将标签设置为 `v` 加上 `versionName`，例如 `v1.1`。版本号使用两段或三段数字。
-4. 将 APK 作为 Release 附件上传，命名为 `AndroidToolKit.apk`。如果一直使用同一密钥分发 Debug APK，也可以上传 `AndroidToolKit-debug.apk`。两个附件同时存在时，应用优先选择 `AndroidToolKit.apk`。
+2. 提交版本变更。创建与 `versionName` 对应的标签，例如 `v1.1`，再将标签推送到 GitHub。
+3. 在 [GitHub Releases](https://github.com/lyufeng000/AndroidToolKit/releases) 查看发布结果。Actions 会在构建、签名和签名校验成功后发布 `AndroidToolKit.apk`。

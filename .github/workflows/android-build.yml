@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - '**'
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 permissions:
@@ -37,7 +39,7 @@ jobs:
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           }
 
-      - name: Build debug APK
+      - name: Build APK
         shell: pwsh
         run: |
           if (-not (Test-Path -LiteralPath 'D:\')) {
@@ -46,13 +48,84 @@ jobs:
             subst D: $buildDrive
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           }
-          $apkPath = Join-Path $env:RUNNER_TEMP 'AndroidToolKit-debug.apk'
-          .\Build.ps1 -ApkPath $apkPath
+          if ($env:GITHUB_REF_TYPE -eq 'tag') {
+            if ($env:GITHUB_REF_NAME -cnotmatch '^v[0-9]+\.[0-9]+(\.[0-9]+)?$') {
+              throw 'Release tag must match vX.Y or vX.Y.Z.'
+            }
+            .\Build.ps1 -Tasks :app:assembleRelease
+          } else {
+            $apkPath = Join-Path $env:RUNNER_TEMP 'AndroidToolKit-debug.apk'
+            .\Build.ps1 -ApkPath $apkPath
+          }
           exit $LASTEXITCODE
 
+      - name: Sign and verify release APK
+        if: github.ref_type == 'tag'
+        shell: pwsh
+        env:
+          APK_KEYSTORE_BASE64: ${{ secrets.APK_KEYSTORE_BASE64 }}
+          APK_KEYSTORE_PASSWORD: ${{ secrets.APK_KEYSTORE_PASSWORD }}
+          APK_KEY_ALIAS: ${{ secrets.APK_KEY_ALIAS }}
+          APK_KEY_PASSWORD: ${{ secrets.APK_KEY_PASSWORD }}
+        run: |
+          foreach ($name in 'APK_KEYSTORE_BASE64', 'APK_KEYSTORE_PASSWORD', 'APK_KEY_ALIAS', 'APK_KEY_PASSWORD') {
+            if (-not [Environment]::GetEnvironmentVariable($name)) {
+              throw "Configure the repository secret $name before publishing releases."
+            }
+          }
+          $releaseDir = 'D:\Data\.temp\AndroidToolKit-build\app\outputs\apk\release'
+          $metadata = Get-Content (Join-Path $releaseDir 'output-metadata.json') -Raw | ConvertFrom-Json
+          $apk = $metadata.elements | Select-Object -First 1
+          if ($env:GITHUB_REF_NAME -cne "v$($apk.versionName)") {
+            throw 'Release tag must match the APK versionName.'
+          }
+          $signer = Join-Path $env:ANDROID_HOME 'build-tools/36.0.0/apksigner.bat'
+          if (-not (Test-Path -LiteralPath $signer -PathType Leaf)) {
+            $sdkManager = Join-Path $env:ANDROID_HOME 'cmdline-tools/latest/bin/sdkmanager.bat'
+            & $sdkManager --sdk_root=$env:ANDROID_HOME 'build-tools;36.0.0'
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+          $keyStore = Join-Path $env:RUNNER_TEMP 'androidtoolkit-release.keystore'
+          $output = Join-Path $env:RUNNER_TEMP 'AndroidToolKit.apk'
+          try {
+            [IO.File]::WriteAllBytes($keyStore, [Convert]::FromBase64String($env:APK_KEYSTORE_BASE64))
+            & $signer sign --ks $keyStore --ks-key-alias $env:APK_KEY_ALIAS --ks-pass env:APK_KEYSTORE_PASSWORD --key-pass env:APK_KEY_PASSWORD --out $output (Join-Path $releaseDir $apk.outputFile)
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+            & $signer verify $output
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          } finally {
+            Remove-Item -LiteralPath $keyStore -ErrorAction SilentlyContinue
+          }
+
       - name: Upload debug APK
+        if: github.ref_type != 'tag'
         uses: actions/upload-artifact@v4
         with:
           name: AndroidToolKit-debug
           path: ${{ runner.temp }}/AndroidToolKit-debug.apk
           if-no-files-found: error
+
+      - name: Upload release APK
+        if: github.ref_type == 'tag'
+        uses: actions/upload-artifact@v4
+        with:
+          name: AndroidToolKit-release
+          path: ${{ runner.temp }}/AndroidToolKit.apk
+          if-no-files-found: error
+
+  publish:
+    if: github.ref_type == 'tag'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download signed APK
+        uses: actions/download-artifact@v4
+        with:
+          name: AndroidToolKit-release
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" AndroidToolKit.apk --repo "$GITHUB_REPOSITORY" --verify-tag --generate-notes
